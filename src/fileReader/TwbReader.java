@@ -3,6 +3,10 @@ package fileReader;
 import java.io.IOException;
 import java.io.File;
 import javax.xml.parsers.*;
+import javax.xml.transform.*;
+import javax.xml.transform.dom.*;
+import javax.xml.transform.stream.StreamResult;
+
 import org.w3c.dom.*;
 import java.io.*;
 
@@ -17,8 +21,8 @@ public class TwbReader {
 			if(item.isFile() && item.getName().toLowerCase().endsWith(".twb")) {
 				
 				// get the name of the file we're going to use as the input stream
-				String inputFile = item.getParent() + "\\" + item.getName();
-				System.out.println(inputFile);
+				String fileWithPath = item.getParent() + "\\" + item.getName();
+				System.out.println(fileWithPath);
 				try {
 					DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 					DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -27,12 +31,17 @@ public class TwbReader {
 					
 					NodeList dsList = doc.getElementsByTagName("datasources");
 					Element dataSources = (Element) dsList.item(0);  // the actual datasources are always the first element
-					
 					NodeList dSources = dataSources.getElementsByTagName("datasource");
+					
+					
 					
 					for (int i = 0; i < dSources.getLength(); i++) {
 						Element source = (Element) dSources.item(i);
 						NodeList columns = source.getElementsByTagName("column");
+						
+
+						
+						System.out.println(columns.getLength());
 						System.out.print("Datasource: " + source.getAttribute("name"));
 						System.out.println(" with " + columns.getLength() + " columns.");
 					}
