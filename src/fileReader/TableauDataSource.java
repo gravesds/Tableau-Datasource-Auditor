@@ -1,6 +1,6 @@
 package fileReader;
 
-public class DataSource {
+public class TableauDataSource {
 	void printMe() {
 		//comment just for checking connection
 	}
