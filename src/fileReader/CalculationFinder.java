@@ -41,26 +41,14 @@ public class CalculationFinder {
 					TableauCalculation tableauCalc = new TableauCalculation("workbook", "version", calcName, calcFormula, calcCaption);
 					
 					tabCalcs.add(tableauCalc);
-					
-					/*System.out.println(tableauCalc.workbook);
-					System.out.println(tableauCalc.tableauVersion);
-					System.out.println(tableauCalc.name);
-					System.out.println(tableauCalc.caption);
-					System.out.println(tableauCalc.formula);
-					System.out.println(tableauCalc.containsCalculation());
-					System.out.println();*/
 					tableauCalc.printCalculation();
 				}
 				
 			}
-			System.out.println(tabCalcs.size());
-			System.out.println(nList.getLength());
-			
-			
-			System.out.println("success");
+			System.out.println("Registered " + tabCalcs.size() + " total calculations in the workbook.");
 			
 		} catch (Exception e) {
-			
+			System.out.println(e.getMessage());
 		}
 		
 

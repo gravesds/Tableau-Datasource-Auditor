@@ -24,6 +24,12 @@ public class TableauCalculation {
 		return m.find();
 	}
 	
+	boolean isLOD() {
+		Pattern pattern = Pattern.compile("\\{");
+		Matcher m = pattern.matcher(this.formula);
+		return m.find();
+	}
+	
 	void printCalculation() {
 		System.out.println("Workbook: " + this.workbook);
 		System.out.println("Versoin: " + this.tableauVersion);
@@ -31,6 +37,7 @@ public class TableauCalculation {
 		System.out.println("Formula:\n" + this.formula);
 		System.out.println("Calculation: " + this.caption);
 		if (this.containsCalculation()) {System.out.println("This calculation references another calculation");}
+		if (this.isLOD()) { System.out.println("This is a Level of Detail expression");}
 		System.out.println();
 		
 	}
