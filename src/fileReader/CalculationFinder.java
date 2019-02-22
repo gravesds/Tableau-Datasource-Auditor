@@ -31,9 +31,7 @@ public class CalculationFinder {
 		
 		
 		
-		endTime = System.currentTimeMillis();
 		
-		System.out.println(endTime - startTime);
 		
 		try {
 			File inputFile = new File("c:/dev/Agent - live.twb");
@@ -41,8 +39,9 @@ public class CalculationFinder {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
+		endTime = System.currentTimeMillis();
 		
-
+		System.out.println(endTime - startTime);
 	}
 	
 	public static void twbRead(String fileName) {

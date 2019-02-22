@@ -24,7 +24,6 @@ public class TwbXMLParser {
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			Document doc = dBuilder.parse(new InputSource(iStream));
-			
 			NodeList nList = doc.getElementsByTagName("calculation");
 			
 			for (int i = 0; i < nList.getLength(); i++ ) {
