@@ -1,2 +1,5 @@
 # Tableau-Datasource-Auditor
-Used to go through all XML data in a directory and all sub directories to examine the elements of the datasources used.
+Audits a directory structure of Tableau workbooks (packaged and normal) for items of interest.
+
+### Primary Purpose
+Level of Detail expressions are costly from a performance perspective - we're looking to make sure there are as few as possible *nested* LOD expressions to keep performance in check.
