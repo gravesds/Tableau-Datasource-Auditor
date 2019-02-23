@@ -21,21 +21,17 @@ public class CalculationFinder {
 	public static ArrayList<TableauWorkbook> tWorkbooks = new ArrayList<TableauWorkbook>();
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// TODO Look for all datasource:name under datasources > view >table > worksheet
+		// TODO add the tableau worksheet class  
+		// TODO worksheet > table > panes > pane <customized-tooltip show-buttons='false'>
 		
 		long startTime;
 		long endTime;
-		
-		
-		
+				
 		startTime = System.currentTimeMillis();
 		
 		File folder = new File("c:/dev");
 		File writedir = new File("c:/dev/dev");
-		
-		
-		
-		
 		
 		try {
 			File inputFile = new File("c:/dev/Agent - live.twb");
@@ -46,11 +42,6 @@ public class CalculationFinder {
 		endTime = System.currentTimeMillis();
 		
 		System.out.println(endTime - startTime);
-		System.out.println(tWorkbooks.get(0).getWorkbookName());
-		System.out.println(tWorkbooks.get(1).getWorkbookName());
-		System.out.println(tWorkbooks.get(2).getWorkbookName());
-		System.out.println(tWorkbooks.get(0).getCalculations().get(10).formula);
-		System.out.println(tWorkbooks.size());
 	}
 	
 	public static ArrayList<TableauCalculation> twbRead(String fileName) {
